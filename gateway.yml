@@ -7,26 +7,35 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: library-service
+      - id: buyer-resource
         uri: lb://library-service
         predicates:
-        - Path=/v1/api/(buyers|seasons)/**
-        # - Path=/v1/api/seasons/**
-        # - Path=/v1/api/garmentTypes/**
-        # - Path=/v1/api/lines/**
-        # - Path=/v1/api/sections/**
-        # - Path=/v1/api/departments/**
-        filters:
-#        - name: RequestRateLimiter
-#          args:
-#            key-resolver: '#{@userKeyResolver}'
-#            redis-rate-limiter.replenishRate: 2
-#            redis-rate-limiter.burstCapacity: 2
-#        - RewritePath=/api/(?<books>.*), /$\{books}
-        - name: Hystrix
-          args:
-            name: fallbackCommand
-            fallbackUri: forward:/v1/api/fallback
+        - Path=/v1/api/buyers/**
+
+      - id: season-resource
+        uri: lb://library-service
+        predicates:
+        - Path=/v1/api/seasons/**
+
+      - id: garment-type-resource
+        uri: lb://library-service
+        predicates:
+        - Path=/v1/api/garmentTypes/**
+
+      - id: line-resource
+        uri: lb://library-service
+        predicates:
+        - Path=/v1/api/lines/**
+
+      - id: section-resource
+        uri: lb://library-service
+        predicates:
+        - Path=/v1/api/sections/**
+
+      - id: department-resource
+        uri: lb://library-service
+        predicates:
+        - Path=/v1/api/departments/**
 
 management:
   endpoints:
