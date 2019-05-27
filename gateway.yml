@@ -10,7 +10,7 @@ spring:
       - id: library-service
         uri: lb://library-service
         predicates:
-        - Path=/v1/api/buyers/**
+        - Path=/v1/api/(buyers|seasons)/**
         # - Path=/v1/api/seasons/**
         # - Path=/v1/api/garmentTypes/**
         # - Path=/v1/api/lines/**
