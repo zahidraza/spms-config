@@ -1,0 +1,30 @@
+server:
+  port: 8050
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+      - id: task-manager
+        uri: lb://task-manager
+        predicates:
+        - Path=/api/tasks/**
+        # filters:
+#        - name: RequestRateLimiter
+#          args:
+#            key-resolver: '#{@userKeyResolver}'
+#            redis-rate-limiter.replenishRate: 2
+#            redis-rate-limiter.burstCapacity: 2
+#        - RewritePath=/api/(?<books>.*), /$\{books}
+        # - name: Hystrix
+        #   args:
+        #     name: taskFallbackCommand
+        #     fallbackUri: forward:/fallback/tasks
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
