@@ -7,10 +7,15 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: task-manager
-        uri: lb://task-manager
+      - id: library-service
+        uri: lb://library-service
         predicates:
-        - Path=/api/tasks/**
+        - Path=/v1/api/buyers/**
+        - Path=/v1/api/seasons/**
+        - Path=/v1/api/garmentTypes/**
+        - Path=/v1/api/lines/**
+        - Path=/v1/api/sections/**
+        - Path=/v1/api/departments/**
         # filters:
 #        - name: RequestRateLimiter
 #          args:
