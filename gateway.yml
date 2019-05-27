@@ -11,11 +11,11 @@ spring:
         uri: lb://library-service
         predicates:
         - Path=/v1/api/buyers/**
-        - Path=/v1/api/seasons/**
-        - Path=/v1/api/garmentTypes/**
-        - Path=/v1/api/lines/**
-        - Path=/v1/api/sections/**
-        - Path=/v1/api/departments/**
+        # - Path=/v1/api/seasons/**
+        # - Path=/v1/api/garmentTypes/**
+        # - Path=/v1/api/lines/**
+        # - Path=/v1/api/sections/**
+        # - Path=/v1/api/departments/**
         filters:
 #        - name: RequestRateLimiter
 #          args:
