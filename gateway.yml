@@ -16,17 +16,17 @@ spring:
         - Path=/v1/api/lines/**
         - Path=/v1/api/sections/**
         - Path=/v1/api/departments/**
-        # filters:
+        filters:
 #        - name: RequestRateLimiter
 #          args:
 #            key-resolver: '#{@userKeyResolver}'
 #            redis-rate-limiter.replenishRate: 2
 #            redis-rate-limiter.burstCapacity: 2
 #        - RewritePath=/api/(?<books>.*), /$\{books}
-        # - name: Hystrix
-        #   args:
-        #     name: taskFallbackCommand
-        #     fallbackUri: forward:/fallback/tasks
+        - name: Hystrix
+          args:
+            name: fallbackCommand
+            fallbackUri: forward:/v1/api/fallback
 
 management:
   endpoints:
