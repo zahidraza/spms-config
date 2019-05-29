@@ -30,6 +30,11 @@ spring:
         jdbc:
           lob:
             non_contextual_creation: true
+
+  liquibase:
+    enabled: true
+    change-log: 'classpath:/db/changelog-master.xml'
+    
 #  mail:
 #    protocol: smtp
 #    test-connection: false
@@ -53,8 +58,7 @@ spring:
 #      id: SPMS_RESOURCE
 #      filter-order: 3
 
-#liquibase:
-#  enabled: true
+
 
 management:
   endpoints:
