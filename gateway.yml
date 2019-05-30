@@ -37,6 +37,36 @@ spring:
         predicates:
         - Path=/v1/api/departments/**
 
+      - id: machine-type-resource
+        uri: lb://proman-service
+        predicates:
+        - Path=/v1/api/machineTypes/**
+
+      - id: machine-resource
+        uri: lb://proman-service
+        predicates:
+        - Path=/v1/api/machines/**
+
+      - id: operation-resource
+        uri: lb://proman-service
+        predicates:
+        - Path=/v1/api/operations/**
+
+      - id: operation-bulletin-template-resource
+        uri: lb://proman-service
+        predicates:
+        - Path=/v1/api/tOperationBulletins/**
+
+      - id: operation-bulletin-resource
+        uri: lb://proman-service
+        predicates:
+        - Path=/v1/api/operationBulletins/**
+
+      - id: order-resource
+        uri: lb://proman-service
+        predicates:
+        - Path=/v1/api/orders/**
+
 management:
   endpoints:
     web:
