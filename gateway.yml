@@ -6,6 +6,11 @@ spring:
     name: gateway
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: '*'
+
       routes:
       - id: buyer-resource
         uri: lb://library-service
