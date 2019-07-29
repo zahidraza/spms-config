@@ -6,10 +6,10 @@ spring:
     name: gateway
   cloud:
     gateway:
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: '*'
+      # globalcors:
+      #   corsConfigurations:
+      #     '[/**]':
+      #       allowedOrigins: '*'
 
       routes:
       - id: buyer-resource
