@@ -1,6 +1,3 @@
-app:
-  home: SPMS_HOME
-
 server:
   port: 8052
 #  compression:
@@ -12,11 +9,8 @@ server:
 
 spring:
   datasource:
-    ###### PostgreSQL Configuration #######
     driverClassName: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/spms_proman
-    # username: mdzahidraza
-    # password: zahid
 
   jpa:
     generate-ddl: false
@@ -35,31 +29,20 @@ spring:
     enabled: true
     change-log: 'classpath:/db/changelog-master.xml'
 
-#  mail:
-#    protocol: smtp
-#    test-connection: false
-#    host: smtp.gmail.com
-#    port: 587
-#    from: noreply@jaza-soft.com
-#    username: admin@jaza-soft.com
-#    password: tuksysvicjegaufu
-#    properties:
-#      mail:
-#        smtp:
-#          auth: true
-#          starttls:
-#            enable: true
-
-
-#security:
-#  filter-order: 0
-#  oauth2:
-#    resource:
-#      id: SPMS_RESOURCE
-#      filter-order: 3
-
-#liquibase:
-#  enabled: true
+  mail:
+    protocol: smtp
+    test-connection: false
+    host: smtp.gmail.com
+    port: 587
+    from: noreply@jaza-soft.com
+    username: admin@jaza-soft.com
+    password: tuksysvicjegaufu
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
 
 management:
   endpoints:
